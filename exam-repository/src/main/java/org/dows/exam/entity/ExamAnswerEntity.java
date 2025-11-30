@@ -23,12 +23,14 @@ public class ExamAnswerEntity extends CrudEntity<ExamAnswerEntity> {
     private Integer examScore;
     @Schema(title = "答案")
     private String answerContent;
-    @Schema(title = "归属者")
-    private Long accountInstanceId;
-    @Schema(title = "操作者ID")
-    private Long operatorId;
     @Schema(title = "应用ID")
     private String appId;
     @Schema(title = "时间戳")
-    private LocalDateTime createTime;
+    private LocalDateTime ct;
+    @Schema(title = "时间戳")
+    private LocalDateTime ut;
+    @Schema(title = "创建账号ID")
+    private Long caid;
+    @Schema(title = "更新账号ID")
+    private Long uaid;
 }

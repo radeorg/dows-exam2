@@ -25,10 +25,12 @@ public class ExamCatelogEntity extends CrudEntity<ExamCatelogEntity> {
     private String appId;
     @Schema(title = "出题提示词，如多维度[{性格,价值观,心理},{java,mysql,ai}]")
     private String prompt;
-    @Schema(title = "归属者")
-    private Long accountInstanceId;
-    @Schema(title = "操作者ID")
-    private Long operatorId;
     @Schema(title = "时间戳")
-    private LocalDateTime createTime;
+    private LocalDateTime ct;
+    @Schema(title = "时间戳")
+    private LocalDateTime ut;
+    @Schema(title = "创建账号ID")
+    private Long caid;
+    @Schema(title = "更新账号ID")
+    private Long uaid;
 }

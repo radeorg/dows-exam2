@@ -2,6 +2,24 @@
 CREATE DATABASE IF NOT EXISTS `exam`;
 USE `exam`;
 
+drop table if exists `exam_invite`;
+CREATE TABLE IF NOT EXISTS `exam_invite`(
+    `exam_invite` bigint(19) DEFAULT NULL COMMENT '测试邀约ID',
+    `invite_sequene` integer(11) DEFAULT NULL COMMENT '邀约序号',
+    `resume_file_id` bigint(19) DEFAULT NULL COMMENT '简历文件ID',
+    `exam_paper_id` bigint(19) DEFAULT NULL COMMENT '考试试卷ID',
+    `org_position_id` bigint(19) DEFAULT NULL COMMENT '岗位ID',
+    `exam_link` varchar(64) DEFAULT NULL COMMENT '考试链接',
+    `send_time` datetime DEFAULT NULL COMMENT '发送时间',
+    `exam_time` datetime DEFAULT NULL COMMENT '考试时间',
+    `state` tinyint(4) DEFAULT NULL COMMENT '状态',
+    `ct` datetime DEFAULT NULL COMMENT '时间戳',
+    `ut` datetime DEFAULT NULL COMMENT '时间戳',
+    `caid` bigint(19) DEFAULT NULL COMMENT '创建账号ID',
+    `uaid` bigint(19) DEFAULT NULL COMMENT '更新账号ID',
+    PRIMARY KEY (`exam_invite`)
+) ENGINE=InnoDB COMMENT='';
+
 drop table if exists `exam_catelog`;
 CREATE TABLE IF NOT EXISTS `exam_catelog`(
     `exam_catelog_id` bigint(19) NOT NULL COMMENT '考试类目ID',
@@ -10,9 +28,10 @@ CREATE TABLE IF NOT EXISTS `exam_catelog`(
     `code` varchar(64) DEFAULT NULL COMMENT 'code',
     `app_id` varchar(64) DEFAULT NULL COMMENT '应用ID',
     `prompt` varchar(64) DEFAULT NULL COMMENT '出题提示词，如多维度[{性格,价值观,心理},{java,mysql,ai}]',
-    `account_instance_id` bigint(19) DEFAULT NULL COMMENT '归属者',
-    `operator_id` bigint(19) DEFAULT NULL COMMENT '操作者ID',
-    `create_time` datetime DEFAULT NULL COMMENT '时间戳',
+    `ct` datetime DEFAULT NULL COMMENT '时间戳',
+    `ut` datetime DEFAULT NULL COMMENT '时间戳',
+    `caid` bigint(19) DEFAULT NULL COMMENT '创建账号ID',
+    `uaid` bigint(19) DEFAULT NULL COMMENT '更新账号ID',
     PRIMARY KEY (`exam_catelog_id`)
 ) ENGINE=InnoDB COMMENT='';
 
@@ -31,7 +50,10 @@ CREATE TABLE IF NOT EXISTS `exam_topic`(
     `account_instance_id` bigint(19) DEFAULT NULL COMMENT '归属者',
     `operator_id` bigint(19) DEFAULT NULL COMMENT '操作者ID',
     `app_id` varchar(64) DEFAULT NULL COMMENT '应用ID',
-    `create_time` datetime DEFAULT NULL COMMENT '时间戳',
+    `ct` datetime DEFAULT NULL COMMENT '时间戳',
+    `ut` datetime DEFAULT NULL COMMENT '时间戳',
+    `caid` bigint(19) DEFAULT NULL COMMENT '创建账号ID',
+    `uaid` bigint(19) DEFAULT NULL COMMENT '更新账号ID',
     PRIMARY KEY (`exam_topic_id`)
 ) ENGINE=InnoDB COMMENT='';
 
@@ -51,11 +73,12 @@ CREATE TABLE IF NOT EXISTS `exam_config`(
     `merged` tinyint(4) DEFAULT NULL COMMENT '是否合并分类',
     `paper_count` integer(11) DEFAULT NULL COMMENT '试卷数量',
     `random` tinyint(4) DEFAULT NULL COMMENT '是否随机出题',
-    `account_instance_id` bigint(19) DEFAULT NULL COMMENT '归属者',
     `operator_id` bigint(19) DEFAULT NULL COMMENT '操作者ID',
     `app_id` varchar(64) DEFAULT NULL COMMENT '应用ID',
-    `create_time` datetime DEFAULT NULL COMMENT '时间戳',
-    `operator_id` bigint(19) DEFAULT NULL COMMENT '操作者ID',
+    `ct` datetime DEFAULT NULL COMMENT '时间戳',
+    `ut` datetime DEFAULT NULL COMMENT '时间戳',
+    `caid` bigint(19) DEFAULT NULL COMMENT '创建账号ID',
+    `uaid` bigint(19) DEFAULT NULL COMMENT '更新账号ID',
     PRIMARY KEY (`exam_config_id`)
 ) ENGINE=InnoDB COMMENT='';
 
@@ -68,9 +91,10 @@ CREATE TABLE IF NOT EXISTS `exam_paper`(
     `content` varchar(64) DEFAULT NULL COMMENT '试卷内容（freemarker渲染生成）',
     `link` varchar(64) DEFAULT NULL COMMENT '试卷链接',
     `app_id` varchar(64) DEFAULT NULL COMMENT '应用ID',
-    `account_instance_id` bigint(19) DEFAULT NULL COMMENT '归属者',
-    `operator_id` bigint(19) DEFAULT NULL COMMENT '操作者ID',
-    `create_time` datetime DEFAULT NULL COMMENT '时间戳 ',
+    `ct` datetime DEFAULT NULL COMMENT '时间戳',
+    `ut` datetime DEFAULT NULL COMMENT '时间戳',
+    `caid` bigint(19) DEFAULT NULL COMMENT '创建账号ID',
+    `uaid` bigint(19) DEFAULT NULL COMMENT '更新账号ID',
     PRIMARY KEY (`exam_paper_id`)
 ) ENGINE=InnoDB COMMENT='';
 
@@ -82,10 +106,11 @@ CREATE TABLE IF NOT EXISTS `exam_question`(
     `exam_topic_id` bigint(19) DEFAULT NULL COMMENT '试题题目ID',
     `seq` integer(11) DEFAULT NULL COMMENT '题目顺序',
     `score` integer(11) DEFAULT NULL COMMENT '分值',
-    `account_instance_id` bigint(19) DEFAULT NULL COMMENT '归属者',
-    `operator_id` bigint(19) DEFAULT NULL COMMENT '操作者ID',
     `app_id` varchar(64) DEFAULT NULL COMMENT '应用ID',
-    `create_time` datetime DEFAULT NULL COMMENT '时间戳',
+    `ct` datetime DEFAULT NULL COMMENT '时间戳',
+    `ut` datetime DEFAULT NULL COMMENT '时间戳',
+    `caid` bigint(19) DEFAULT NULL COMMENT '创建账号ID',
+    `uaid` bigint(19) DEFAULT NULL COMMENT '更新账号ID',
     PRIMARY KEY (`exam_question_id`)
 ) ENGINE=InnoDB COMMENT='';
 
@@ -101,10 +126,11 @@ CREATE TABLE IF NOT EXISTS `exam_instance`(
     `end_time` datetime DEFAULT NULL COMMENT '结束考试时间',
     `finish_time` datetime DEFAULT NULL COMMENT '完成时间',
     `enabled` tinyint(4) DEFAULT NULL COMMENT '是否可用0-可用，1-不可用',
-    `account_instance_id` bigint(19) DEFAULT NULL COMMENT '归属者',
-    `operator_id` bigint(19) DEFAULT NULL COMMENT '操作者ID',
     `app_id` varchar(64) DEFAULT NULL COMMENT '应用ID',
-    `create_time` datetime DEFAULT NULL COMMENT '时间戳',
+    `ct` datetime DEFAULT NULL COMMENT '时间戳',
+    `ut` datetime DEFAULT NULL COMMENT '时间戳',
+    `caid` bigint(19) DEFAULT NULL COMMENT '创建账号ID',
+    `uaid` bigint(19) DEFAULT NULL COMMENT '更新账号ID',
     PRIMARY KEY (`exam_instance_id`)
 ) ENGINE=InnoDB COMMENT='';
 
@@ -115,10 +141,11 @@ CREATE TABLE IF NOT EXISTS `exam_answer`(
     `exam_question_id` bigint(19) DEFAULT NULL COMMENT '考试问题ID',
     `exam_score` integer(11) DEFAULT NULL COMMENT '考得分值',
     `answer_content` varchar(64) DEFAULT NULL COMMENT '答案',
-    `account_instance_id` bigint(19) DEFAULT NULL COMMENT '归属者',
-    `operator_id` bigint(19) DEFAULT NULL COMMENT '操作者ID',
     `app_id` varchar(64) DEFAULT NULL COMMENT '应用ID',
-    `create_time` datetime DEFAULT NULL COMMENT '时间戳',
+    `ct` datetime DEFAULT NULL COMMENT '时间戳',
+    `ut` datetime DEFAULT NULL COMMENT '时间戳',
+    `caid` bigint(19) DEFAULT NULL COMMENT '创建账号ID',
+    `uaid` bigint(19) DEFAULT NULL COMMENT '更新账号ID',
     PRIMARY KEY (`exam_answer_id`)
 ) ENGINE=InnoDB COMMENT='';
 

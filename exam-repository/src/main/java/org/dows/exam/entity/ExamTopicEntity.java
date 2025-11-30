@@ -40,5 +40,11 @@ public class ExamTopicEntity extends CrudEntity<ExamTopicEntity> {
     @Schema(title = "应用ID")
     private String appId;
     @Schema(title = "时间戳")
-    private LocalDateTime createTime;
+    private LocalDateTime ct;
+    @Schema(title = "时间戳")
+    private LocalDateTime ut;
+    @Schema(title = "创建账号ID")
+    private Long caid;
+    @Schema(title = "更新账号ID")
+    private Long uaid;
 }

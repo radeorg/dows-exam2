@@ -41,14 +41,16 @@ public class ExamConfigEntity extends CrudEntity<ExamConfigEntity> {
     private Integer paperCount;
     @Schema(title = "是否随机出题")
     private Boolean random;
-    @Schema(title = "归属者")
-    private Long accountInstanceId;
     @Schema(title = "操作者ID")
     private Long operatorId;
     @Schema(title = "应用ID")
     private String appId;
     @Schema(title = "时间戳")
-    private LocalDateTime createTime;
-    @Schema(title = "操作者ID")
-    private Long operatorId;
+    private LocalDateTime ct;
+    @Schema(title = "时间戳")
+    private LocalDateTime ut;
+    @Schema(title = "创建账号ID")
+    private Long caid;
+    @Schema(title = "更新账号ID")
+    private Long uaid;
 }

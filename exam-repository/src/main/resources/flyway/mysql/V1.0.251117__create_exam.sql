@@ -20,9 +20,9 @@ CREATE TABLE IF NOT EXISTS `exam_invite`(
     PRIMARY KEY (`exam_invite`)
 ) ENGINE=InnoDB COMMENT='';
 
-drop table if exists `exam_catelog`;
-CREATE TABLE IF NOT EXISTS `exam_catelog`(
-    `exam_catelog_id` bigint(19) NOT NULL COMMENT '考试类目ID',
+drop table if exists `exam_catalog`;
+CREATE TABLE IF NOT EXISTS `exam_catalog`(
+    `exam_catalog_id` bigint(19) NOT NULL COMMENT '考试类目ID',
     `pid` bigint(19) DEFAULT NULL COMMENT '父ID',
     `name` varchar(64) DEFAULT NULL COMMENT '知识类目',
     `code` varchar(64) DEFAULT NULL COMMENT 'code',
@@ -32,13 +32,13 @@ CREATE TABLE IF NOT EXISTS `exam_catelog`(
     `ut` datetime DEFAULT NULL COMMENT '时间戳',
     `caid` bigint(19) DEFAULT NULL COMMENT '创建账号ID',
     `uaid` bigint(19) DEFAULT NULL COMMENT '更新账号ID',
-    PRIMARY KEY (`exam_catelog_id`)
+    PRIMARY KEY (`exam_catalog_id`)
 ) ENGINE=InnoDB COMMENT='';
 
 drop table if exists `exam_topic`;
 CREATE TABLE IF NOT EXISTS `exam_topic`(
     `exam_topic_id` bigint(19) NOT NULL COMMENT '试题题目ID',
-    `exam_catelog_id` bigint(19) DEFAULT NULL COMMENT '考试类目ID',
+    `exam_catalog_id` bigint(19) DEFAULT NULL COMMENT '考试类目ID',
     `topic` varchar(64) DEFAULT NULL COMMENT '题目名称',
     `description` varchar(64) DEFAULT NULL COMMENT '题目描述',
     `option_json` text DEFAULT NULL COMMENT '题目答案选项',

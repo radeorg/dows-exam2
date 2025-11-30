@@ -16,7 +16,7 @@ public class ExamTopicEntity extends CrudEntity<ExamTopicEntity> {
     @Schema(title = "试题题目ID")
     private Long examTopicId;
     @Schema(title = "考试类目ID")
-    private Long examCatelogId;
+    private Long examCatalogId;
     @Schema(title = "题目名称")
     private String topic;
     @Schema(title = "题目描述")

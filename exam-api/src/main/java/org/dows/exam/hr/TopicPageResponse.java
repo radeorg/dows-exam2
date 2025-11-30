@@ -16,7 +16,7 @@ public class TopicPageResponse {
     private Long examTopicId;
 
     @Schema(description = "考试类目ID")
-    private Long examCatelogId;
+    private Long examCatalogId;
 
     @Schema(description = "题目名称")
     private String topic;

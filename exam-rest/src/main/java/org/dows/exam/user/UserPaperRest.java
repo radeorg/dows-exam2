@@ -11,9 +11,9 @@ import org.dows.exam.user.PaperQuestionRequest;
 import org.dows.exam.user.PaperQuestionResponse;
 
 @RequiredArgsConstructor
-@Tag(name = "UserpaperRest", description = "试卷")
+@Tag(name = "UserPaperRest", description = "试卷")
 @RestController
-public class UserpaperRest{
+public class UserPaperRest{
     @GetMapping("user/paper/entity")
     @Schema(title = "试卷详情,列出试卷题目")
     public PaperEntityResponse getEntity( PaperEntityRequest paperEntityRequest){

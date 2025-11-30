@@ -13,9 +13,9 @@ import org.dows.exam.hr.ExamPageRequest;
 import org.dows.exam.hr.ExamPageResponse;
 
 @RequiredArgsConstructor
-@Tag(name = "ExamRest", description = "考试")
+@Tag(name = "HrExamRest", description = "考试")
 @RestController
-public class ExamRest{
+public class HrExamRest{
     @PostMapping("hr/exam/entity")
     @Schema(title = "创建考试")
     public ExamEntityResponse postEntity(@RequestBody ExamEntityRequest examEntityRequest){

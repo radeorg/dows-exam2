@@ -15,9 +15,9 @@ import org.dows.exam.hr.CatalogTreeRequest;
 import org.dows.exam.hr.CatalogTreeResponse;
 
 @RequiredArgsConstructor
-@Tag(name = "HrcatalogRest", description = "类目")
+@Tag(name = "HrCatalogRest", description = "类目")
 @RestController
-public class HrcatalogRest{
+public class HrCatalogRest{
     @PostMapping("hr/catalog/entity")
     @Schema(title = "新增类目")
     public CatalogEntityResponse postEntity(@RequestBody CatalogEntityRequest catalogEntityRequest){

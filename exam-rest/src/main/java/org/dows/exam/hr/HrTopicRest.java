@@ -17,9 +17,9 @@ import org.dows.exam.hr.TopicPageRequest;
 import org.dows.exam.hr.TopicPageResponse;
 
 @RequiredArgsConstructor
-@Tag(name = "TopicRest", description = "题目")
+@Tag(name = "HrTopicRest", description = "题目")
 @RestController
-public class TopicRest{
+public class HrTopicRest{
     @PostMapping("hr/topic/entity")
     @Schema(title = "新增题目")
     public TopicEntityResponse postEntity(@RequestBody TopicEntityRequest topicEntityRequest){

@@ -11,9 +11,9 @@ import org.dows.exam.user.ExamEntityRequest;
 import org.dows.exam.user.ExamEntityResponse;
 
 @RequiredArgsConstructor
-@Tag(name = "UserexamRest", description = "考试")
+@Tag(name = "UserExamRest", description = "考试")
 @RestController
-public class UserexamRest{
+public class UserExamRest{
     @GetMapping("user/exam/entity")
     @Schema(title = "考试详情,考试时间&链接等")
     public ExamEntityResponse getEntity( ExamEntityRequest examEntityRequest){

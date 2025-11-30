@@ -13,9 +13,9 @@ import org.dows.exam.hr.PaperEntityRequest;
 import org.dows.exam.hr.PaperEntityResponse;
 
 @RequiredArgsConstructor
-@Tag(name = "PaperRest", description = "试卷")
+@Tag(name = "HrPaperRest", description = "试卷")
 @RestController
-public class PaperRest{
+public class HrPaperRest{
     @PostMapping("hr/paper/entity")
     @Schema(title = "生成试卷,通过examConfig对象生成试卷&试题")
     public PaperEntityResponse postEntity(@RequestBody PaperEntityRequest paperEntityRequest){

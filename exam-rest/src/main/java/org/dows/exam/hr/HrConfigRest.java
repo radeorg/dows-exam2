@@ -17,9 +17,9 @@ import org.dows.exam.hr.ConfigEntityRequest;
 import org.dows.exam.hr.ConfigEntityResponse;
 
 @RequiredArgsConstructor
-@Tag(name = "HrconfigRest", description = "配置")
+@Tag(name = "HrConfigRest", description = "配置")
 @RestController
-public class HrconfigRest{
+public class HrConfigRest{
     @PostMapping("hr/config/entity")
     @Schema(title = "创建配置")
     public ConfigEntityResponse postEntity(@RequestBody ConfigEntityRequest configEntityRequest){

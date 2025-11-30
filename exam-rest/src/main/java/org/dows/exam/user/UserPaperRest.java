@@ -14,14 +14,17 @@ import org.dows.exam.user.PaperQuestionResponse;
 @Tag(name = "UserPaperRest", description = "试卷")
 @RestController
 public class UserPaperRest{
+
     @GetMapping("user/paper/entity")
     @Schema(title = "试卷详情,列出试卷题目")
     public PaperEntityResponse getEntity( PaperEntityRequest paperEntityRequest){
         return null;
     }
+
     @GetMapping("user/paper/question")
     @Schema(title = "获取试卷中的下一题")
     public PaperQuestionResponse getQuestion( PaperQuestionRequest paperQuestionRequest){
         return null;
     }
+
 }

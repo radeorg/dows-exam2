@@ -16,19 +16,23 @@ import org.dows.exam.hr.ExamPageResponse;
 @Tag(name = "HrExamRest", description = "考试")
 @RestController
 public class HrExamRest{
+
     @PostMapping("hr/exam/entity")
     @Schema(title = "创建考试")
     public ExamEntityResponse postEntity(@RequestBody ExamEntityRequest examEntityRequest){
         return null;
     }
+
     @GetMapping("hr/exam/entity")
     @Schema(title = "考试详情,考试时间&链接等")
     public ExamEntityResponse getEntity( ExamEntityRequest examEntityRequest){
         return null;
     }
+
     @GetMapping("hr/exam/page")
     @Schema(title = "考试分页")
     public ExamPageResponse getPage( ExamPageRequest examPageRequest){
         return null;
     }
+
 }

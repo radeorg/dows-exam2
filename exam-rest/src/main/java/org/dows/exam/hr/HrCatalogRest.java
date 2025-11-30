@@ -18,24 +18,29 @@ import org.dows.exam.hr.CatalogTreeResponse;
 @Tag(name = "HrCatalogRest", description = "类目")
 @RestController
 public class HrCatalogRest{
+
     @PostMapping("hr/catalog/entity")
     @Schema(title = "新增类目")
     public CatalogEntityResponse postEntity(@RequestBody CatalogEntityRequest catalogEntityRequest){
         return null;
     }
+
     @PutMapping("hr/catalog/entity")
     @Schema(title = "修改类目")
     public CatalogEntityResponse putEntity(@RequestBody CatalogEntityRequest catalogEntityRequest){
         return null;
     }
+
     @DeleteMapping("hr/catalog/entity")
     @Schema(title = "删除类目")
     public CatalogEntityResponse deleteEntity(@RequestBody CatalogEntityRequest catalogEntityRequest){
         return null;
     }
+
     @GetMapping("hr/catalog/tree")
     @Schema(title = "获取类目树")
     public CatalogTreeResponse getTree( CatalogTreeRequest catalogTreeRequest){
         return null;
     }
+
 }

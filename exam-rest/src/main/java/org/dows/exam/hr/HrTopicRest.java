@@ -20,29 +20,35 @@ import org.dows.exam.hr.TopicPageResponse;
 @Tag(name = "HrTopicRest", description = "题目")
 @RestController
 public class HrTopicRest{
+
     @PostMapping("hr/topic/entity")
     @Schema(title = "新增题目")
     public TopicEntityResponse postEntity(@RequestBody TopicEntityRequest topicEntityRequest){
         return null;
     }
+
     @PutMapping("hr/topic/entity")
     @Schema(title = "修改题目")
     public TopicEntityResponse putEntity(@RequestBody TopicEntityRequest topicEntityRequest){
         return null;
     }
+
     @DeleteMapping("hr/topic/entity")
     @Schema(title = "删除题目")
     public TopicEntityResponse deleteEntity(@RequestBody TopicEntityRequest topicEntityRequest){
         return null;
     }
+
     @GetMapping("hr/topic/entity")
     @Schema(title = "题目详情")
     public TopicEntityResponse getEntity( TopicEntityRequest topicEntityRequest){
         return null;
     }
+
     @GetMapping("hr/topic/page")
     @Schema(title = "题目分页")
     public TopicPageResponse getPage( TopicPageRequest topicPageRequest){
         return null;
     }
+
 }
